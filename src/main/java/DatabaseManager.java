@@ -47,8 +47,6 @@ public class DatabaseManager {
             e.printStackTrace();
         }
     }
-
-
     public static Connection getConnection() throws SQLException {
         Properties properties = new Properties();
         try (InputStream inputStream = DatabaseManager.class.getClassLoader().getResourceAsStream(PROPERTIES_FILE)) {

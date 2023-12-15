@@ -13,15 +13,13 @@ import java.util.List;
 public class Empleado implements Serializable {
     private String cedula;
     private String nombre;
-    private int id;
     private String tipoContrato;
     private String areaTrabajo;
     private double sueldo;
 
-    public Empleado(String cedula, String nombre, int id, String tipoContrato, String areaTrabajo, double sueldo) {
+    public Empleado(String cedula, String nombre, String tipoContrato, String areaTrabajo, double sueldo) {
         setCedula(cedula);
         setNombre(nombre);
-        setId(id);
         setTipoContrato(tipoContrato);
         setAreaTrabajo(areaTrabajo);
         setSueldo(sueldo);
@@ -52,18 +50,6 @@ public class Empleado implements Serializable {
             throw new IllegalArgumentException("El nombre no puede estar vacío o ser nulo");
         }
         this.nombre = nombre;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        // Validar que el ID sea mayor que cero
-        if (id <= 0) {
-            throw new IllegalArgumentException("El ID debe ser mayor que cero");
-        }
-        this.id = id;
     }
 
     public String getTipoContrato() {
@@ -129,7 +115,6 @@ public class Empleado implements Serializable {
 
             while (resultSet.next()) {
                 Empleado empleado = new Empleado();
-                empleado.setId(resultSet.getInt("id"));
                 empleado.setCedula(resultSet.getString("cedula"));
                 empleado.setNombre(resultSet.getString("nombre"));
                 empleado.setTipoContrato(resultSet.getString("tipo_contrato"));
@@ -151,7 +136,6 @@ public class Empleado implements Serializable {
         return "main.java.Empleado{" +
                 "cedula='" + cedula + '\'' +
                 ", nombre='" + nombre + '\'' +
-                ", id=" + id +
                 ", tipoContrato='" + tipoContrato + '\'' +
                 ", areaTrabajo='" + areaTrabajo + '\'' +
                 ", sueldo=" + sueldo +

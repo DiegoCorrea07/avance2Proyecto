@@ -6,12 +6,12 @@ public class SueldoRegistro {
     private int id;
     private String cedulaEmpleado;
     private Date fecha;
-    private double horasTrabajadas;
+    private int horasTrabajadas;
     private int multa;
     private int bono;
     private double sueldo;
 
-    public SueldoRegistro(int id, String cedulaEmpleado, Date fecha, double horasTrabajadas, int multa, int bono, double sueldo) {
+    public SueldoRegistro(int id, String cedulaEmpleado, Date fecha, int horasTrabajadas, int multa, int bono, double sueldo) {
         this.id = id;
         this.cedulaEmpleado = cedulaEmpleado;
         this.fecha = fecha;
@@ -45,11 +45,11 @@ public class SueldoRegistro {
         this.fecha = fecha;
     }
 
-    public double getHorasTrabajadas() {
+    public int getHorasTrabajadas() {
         return horasTrabajadas;
     }
 
-    public void setHorasTrabajadas(double horasTrabajadas) {
+    public void setHorasTrabajadas(int horasTrabajadas) {
         this.horasTrabajadas = horasTrabajadas;
     }
 
@@ -79,13 +79,13 @@ public class SueldoRegistro {
 
     @Override
     public String toString() {
-        return "ID: " + id +
-                ", Cedula Empleado: " + cedulaEmpleado +
-                ", Fecha: " + fecha +
-                ", Horas Trabajadas: " + horasTrabajadas +
-                ", Multa: " + multa +
-                ", Bono: " + bono +
-                ", Sueldo: " + sueldo;
+        return "| ID: " + id +
+                "|, | Cedula Empleado: " + cedulaEmpleado +
+                "|, | Fecha: " + fecha +
+                "|, | Horas Trabajadas: " + horasTrabajadas +
+                "|, | Multa: " + multa +
+                "|, | Bono: " + bono +
+                "|, | Sueldo: " + sueldo + "|";
     }
 
 }
